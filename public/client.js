@@ -1,4 +1,5 @@
 var socket = io();
+const http = require('http');
 
 var connectionCount = document.getElementById('connection-count');
 
@@ -22,5 +23,5 @@ for (var i = 0; i < buttons.length; i++) {
 
 socket.on('voteCount', function (votes) {
   console.log(votes);
-  $( ".votes" ).append( "<p> stuff" );
+  //( "" ).append( "<p> stuff" );
 });
