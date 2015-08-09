@@ -1,5 +1,4 @@
 var socket = io();
-const http = require('http');
 
 var connectionCount = document.getElementById('connection-count');
 
