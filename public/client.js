@@ -22,5 +22,4 @@ for (var i = 0; i < buttons.length; i++) {
 
 socket.on('voteCount', function (votes) {
   console.log(votes);
-  //( "" ).append( "<p> stuff" );
 });

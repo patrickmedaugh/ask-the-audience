@@ -1,5 +1,4 @@
 // server.js
-var votes = {};
 const http = require('http');
 const express = require('express');
 
@@ -22,18 +21,21 @@ module.exports = server;
 
 const io = require('socket.io')(server);
 
+var voteCount = {
+  A: 0,
+  B: 0,
+  C: 0,
+  D: 0
+};
+
 function countVotes(votes) {
-  var voteCount = {
-    A: 0,
-    B: 0,
-    C: 0,
-    D: 0
-  };
-  for (vote in votes) {
+ for (vote in votes) {
     voteCount[votes[vote]]++
   }
   return voteCount;
 }
+
+var votes = {};
 
 io.on('connection', function (socket) {
   console.log('A user has connected.', io.engine.clientsCount);
