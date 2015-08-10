@@ -4,6 +4,7 @@ var connectionCount = document.getElementById('connection-count');
 
 socket.on('usersConnected', function (count) {
   connectionCount.innerText = 'Connected Users: ' + count;
+  $('#status-message').append('<p>' + connectionCount.innerText + '</p>');
 });
 
 var statusMessage = document.getElementById('status-message');
@@ -16,7 +17,9 @@ var buttons = document.querySelectorAll('#choices button');
 
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function () {
-    socket.send('voteCast', this.innerText);
+    var thisVote = this.innerText
+    socket.send('voteCast', thisVote);
+    thisVote = "";
   });
 }
 

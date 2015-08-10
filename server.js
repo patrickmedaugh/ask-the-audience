@@ -21,16 +21,16 @@ module.exports = server;
 
 const io = require('socket.io')(server);
 
+
+function countVotes(votes) {
 var voteCount = {
   A: 0,
   B: 0,
   C: 0,
   D: 0
 };
-
-function countVotes(votes) {
  for (vote in votes) {
-    voteCount[votes[vote]]+= 1;
+    voteCount[votes[vote]]++;
   }
   return voteCount;
 }
