@@ -22,4 +22,10 @@ for (var i = 0; i < buttons.length; i++) {
 
 socket.on('voteCount', function (votes) {
   console.log(votes);
+  $('#status-message').empty();
+  $('#status-message').append('<p>A: ' + votes.A + '</p>' +
+                              '<p>B: ' + votes.B + '</p>' +
+                              '<p>C: ' + votes.C + '</p>' +
+                              '<p>D: ' + votes.D + '</p>'
+      );
 });
