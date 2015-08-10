@@ -2,9 +2,8 @@ var socket = io();
 
 var connectionCount = document.getElementById('connection-count');
 
-socket.on('usersConnected', function (count) {
-  connectionCount.innerText = 'Connected Users: ' + count;
-  $('#status-message').append('<p>' + connectionCount.innerText + '</p>');
+socket.on('userConnection', function (count) {
+  $('#status-message').append('<p>Connected Users: ' + count + '</p>');
 });
 
 var statusMessage = document.getElementById('status-message');
