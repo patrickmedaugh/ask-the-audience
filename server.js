@@ -30,7 +30,7 @@ var voteCount = {
 
 function countVotes(votes) {
  for (vote in votes) {
-    voteCount[votes[vote]]++
+    voteCount[votes[vote]]+= 1;
   }
   return voteCount;
 }
